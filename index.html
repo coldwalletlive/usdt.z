@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>USDT.Z — Official Token Info</title>
+  <meta name="description" content="USDT.Z (USDTZ) official info page. Transparent token details and audit links. Not affiliated with Tether/USDT." />
+  <style>
+    :root{--bg:#0b0f14;--mut:#0f1620;--card:#101824;--bor:#1e2a39;--txt:#e8eff7;--sub:#9fb2c7;--a:#2bb3ff;--ok:#36d399;}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 system-ui,Segoe UI,Roboto,Arial}
+    a{color:var(--a);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{position:sticky;top:0;background:rgba(11,15,20,.9);backdrop-filter:blur(6px);border-bottom:1px solid var(--bor);z-index:10}
+    .row{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .btn{padding:10px 14px;border-radius:10px;border:1px solid var(--bor);background:var(--mut)}
+    .card{background:var(--card);border:1px solid var(--bor);border-radius:14px;padding:18px}
+    .grid{display:grid;gap:18px} @media(min-width:900px){.grid-2{grid-template-columns:1.2fr .8fr}}
+    .h1{font-size:36px;margin:0 0 8px} .h2{font-size:20px;margin:0 0 8px} .muted{color:var(--sub)} .ok{color:var(--ok)}
+    input.addr{width:100%;padding:12px;border-radius:10px;border:1px solid var(--bor);background:#0a111a;color:var(--txt);font-family:ui-monospace,Consolas,monospace}
+    .list{display:grid;gap:8px} .li{padding:12px;border:1px dashed var(--bor);border-radius:10px;background:var(--mut)}
+    .kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:10px} @media(min-width:700px){.kpi{grid-template-columns:repeat(4,1fr)}}
+    .item{padding:12px;border:1px solid var(--bor);border-radius:12px;background:var(--mut);text-align:center}
+    footer{margin:36px 0 16px;color:var(--sub);font-size:14px;text-align:center}
+  </style>
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap">
+      <div class="row">
+        <strong>USDT.Z</strong>
+        <div class="row">
+          <a class="btn" href="#tokenomics">Tokenomics</a>
+          <a class="btn" href="audit.html">Audit</a>
+          <a class="btn" href="source.html">Source</a>
+          <a class="btn" href="team.html">Team</a>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="wrap" style="padding:56px 0">
+    <div class="grid grid-2">
+      <div class="card">
+        <p class="muted">Static info site for transparency. <b>Not affiliated with Tether/USDT</b>.</p>
+        <h1 class="h1">USDT.Z (USDTZ)</h1>
+        <div class="h2">Token Contract</div>
+        <div style="display:flex;gap:8px;margin:8px 0 12px">
+          <input id="addr" class="addr" readonly>
+          <button class="btn" id="copyBtn">Copy</button>
+        </div>
+        <div class="row" style="flex-wrap:wrap;justify-content:flex-start">
+          <a class="btn" id="bscBtn" target="_blank" rel="noopener">View on BscScan</a>
+          <a class="btn" href="source.html">Source</a>
+        </div>
+
+        <div style="height:12px"></div>
+        <div class="kpi">
+          <div class="item"><div style="font-weight:700">18</div><div class="muted" style="font-size:13px">Decimals</div></div>
+          <div class="item"><div style="font-weight:700">USDTZ</div><div class="muted" style="font-size:13px">Symbol</div></div>
+          <div class="item"><div style="font-weight:700">BSC</div><div class="muted" style="font-size:13px">Chain</div></div>
+          <div class="item"><div style="font-weight:700">Open</div><div class="muted" style="font-size:13px">Ownership</div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="h2">Integrity Checklist</div>
+        <div class="list">
+          <div class="li ok">HTTPS active (Cloudflare free SSL).</div>
+          <div class="li ok">Functional internal links.</div>
+          <div class="li ok">Official email: <span id="em"></span></div>
+          <div class="li ok">Clear disclaimer.</div>
+          <div class="li ok">Verified contract visible.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="tokenomics" class="wrap">
+    <div class="card">
+      <h2 class="h2">Tokenomics</h2>
+      <ul class="list">
+        <li class="li">Total Supply: 1,000,000,000 USDTZ</li>
+        <li class="li">Decimals: 18</li>
+        <li class="li">Audit: <a href="audit.html">audit.html</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap">
+    <div class="card">
+      <h2 class="h2">Contact</h2>
+      <p>Email: <a id="em2" href="#">contact@usdtz.app</a></p>
+      <p>Privacy: <a href="privacy.html">privacy.html</a></p>
+    </div>
+  </section>
+
+  <footer>© <span id="y"></span> USDT.Z — Not affiliated with Tether/USDT.</footer>
+
+  <script>
+    const y=document.getElementById('y');y.textContent=new Date().getFullYear();
+    const a=window.USDTZ_ADDRESS;const e=window.CONTACT_EMAIL;
+    document.getElementById('addr').value=a;
+    document.getElementById('em').textContent=e;
+    const em2=document.getElementById('em2');em2.textContent=e;em2.href="mailto:"+e;
+    document.getElementById('bscBtn').href=`https://bscscan.com/token/${a}`;
+    document.getElementById('copyBtn').onclick=async()=>{await navigator.clipboard.writeText(a);alert("Copied");};
+  </script>
+</body>
+</html>

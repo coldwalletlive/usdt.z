@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USDT.Z — Source</title>
+<style>body{margin:0;background:#0b0f14;color:#e8eff7;font:16px/1.6 system-ui}.wrap{max-width:900px;margin:0 auto;padding:24px}.card{background:#101824;border:1px solid #1e2a39;border-radius:14px;padding:18px}a{color:#2bb3ff}</style>
+<script src="config.js"></script>
+</head><body><div class="wrap"><div class="card">
+<h1>Verified Source</h1>
+<p>Contract: <code id="addr"></code></p>
+<p><a id="link" target="_blank" rel="noopener">Open on BscScan</a></p>
+<p><a href="docs/standard-input.json">Standard JSON</a></p>
+<p><a href="index.html">← Back</a></p>
+</div></div>
+<script>
+const a=window.USDTZ_ADDRESS;
+document.getElementById('addr').textContent=a;
+document.getElementById('link').href=`https://bscscan.com/token/${a}#code`;
+</script>
+</body></html>
