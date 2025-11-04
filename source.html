@@ -1,18 +1,98 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>USDT.Z — Source</title>
-<style>body{margin:0;background:#0b0f14;color:#e8eff7;font:16px/1.6 system-ui}.wrap{max-width:900px;margin:0 auto;padding:24px}.card{background:#101824;border:1px solid #1e2a39;border-radius:14px;padding:18px}a{color:#2bb3ff}</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>USDT.Z — Source Code</title>
+<link rel="icon" type="image/png" href="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png">
+<style>
+  :root{
+    --bg: #0a0f1a;
+    --mut: #111827;
+    --card: #1a2438;
+    --bor: #2d3748;
+    --txt: #f7fafc;
+    --sub: #a0aec0;
+    --a: #3182ce;
+    --accent: #d69e2e;
+    --ok: #38a169;
+  }
+  body{
+    margin:0;
+    background: var(--bg);
+    color:var(--txt);
+    font:16px/1.6 system-ui;
+    background: linear-gradient(135deg, var(--bg) 0%, #1a365d 100%);
+    min-height: 100vh;
+  }
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:24px
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--bor);
+    border-radius:14px;
+    padding:24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  a{
+    color:var(--a);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover{
+    color:var(--accent);
+    text-decoration: underline;
+  }
+  h1 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .logo-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  code {
+    background: var(--mut);
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--bor);
+    font-family: ui-monospace, Consolas, monospace;
+    word-break: break-all;
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--accent);
+  }
+</style>
 <script src="config.js"></script>
-</head><body><div class="wrap"><div class="card">
-<h1>Verified Source</h1>
-<p>Contract: <code id="addr"></code></p>
-<p><a id="link" target="_blank" rel="noopener">Open on BscScan</a></p>
-<p><a href="docs/standard-input.json">Standard JSON</a></p>
-<p><a href="index.html">← Back</a></p>
-</div></div>
-<script>
-const a=window.USDTZ_ADDRESS;
-document.getElementById('addr').textContent=a;
-document.getElementById('link').href=`https://bscscan.com/token/${a}#code`;
-</script>
-</body></html>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo-header">
+        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png" alt="USDT.Z Logo" class="logo-img">
+        <h1>Source Code</h1>
+      </div>
+      <p>Verified smart contract source code available on BscScan:</p>
+      <p><strong>Contract Address:</strong> <code id="addr"></code></p>
+      <p><a id="link" target="_blank" rel="noopener">Open Verified Code on BscScan</a></p>
+      <p><a href="docs/standard-input.json">Standard JSON Input</a></p>
+      <p style="margin-top: 30px; text-align: center;"><a href="index.html">← Back to Home</a></p>
+    </div>
+  </div>
+  <script>
+    const a=window.USDTZ_ADDRESS;
+    document.getElementById('addr').textContent=a;
+    document.getElementById('link').href=`https://bscscan.com/token/${a}#code`;
+  </script>
+</body>
+</html>
