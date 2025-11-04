@@ -1,15 +1,103 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>USDT.Z — Audit</title>
-<style>body{margin:0;background:#0b0f14;color:#e8eff7;font:16px/1.6 system-ui}.wrap{max-width:900px;margin:0 auto;padding:24px}.card{background:#101824;border:1px solid #1e2a39;border-radius:14px;padding:18px}a{color:#2bb3ff}</style>
+<link rel="icon" type="image/png" href="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png">
+<style>
+  :root{
+    --bg: #0a0f1a;
+    --mut: #111827;
+    --card: #1a2438;
+    --bor: #2d3748;
+    --txt: #f7fafc;
+    --sub: #a0aec0;
+    --a: #3182ce;
+    --accent: #d69e2e;
+    --ok: #38a169;
+  }
+  body{
+    margin:0;
+    background: var(--bg);
+    color:var(--txt);
+    font:16px/1.6 system-ui;
+    background: linear-gradient(135deg, var(--bg) 0%, #1a365d 100%);
+    min-height: 100vh;
+  }
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:24px
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--bor);
+    border-radius:14px;
+    padding:24px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+  a{
+    color:var(--a);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover{
+    color:var(--accent);
+    text-decoration: underline;
+  }
+  h1 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .logo-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    margin: 15px 0;
+    padding: 12px;
+    background: var(--mut);
+    border-radius: 8px;
+    border: 1px solid var(--bor);
+    transition: all 0.3s ease;
+  }
+  li:hover {
+    border-color: var(--accent);
+    transform: translateX(5px);
+  }
+</style>
 <script src="config.js"></script>
-</head><body><div class="wrap"><div class="card">
-<h1>Audit</h1>
-<ul>
-<li><a id="bsc" target="_blank" rel="noopener">View verified code on BscScan</a></li>
-<li><a href="docs/usdtz_audit.pdf" target="_blank" rel="noopener">Audit PDF (coming soon)</a></li>
-</ul>
-<p><a href="index.html">← Back</a></p>
-</div></div>
-<script>document.getElementById('bsc').href=`https://bscscan.com/token/${window.USDTZ_ADDRESS}#code`;</script>
-</body></html>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo-header">
+        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png" alt="USDT.Z Logo" class="logo-img">
+        <h1>Security & Audit</h1>
+      </div>
+      <p>Our contract is verified and transparent on BscScan. Additional security audits will be published here.</p>
+      <ul>
+        <li><a id="bsc" target="_blank" rel="noopener">View verified code on BscScan</a></li>
+        <li><a href="docs/usdtz_audit.pdf" target="_blank" rel="noopener">Security Audit Report (coming soon)</a></li>
+        <li><a href="source.html">View Source Code</a></li>
+      </ul>
+      <p style="margin-top: 30px; text-align: center;"><a href="index.html">← Back to Home</a></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('bsc').href=`https://bscscan.com/token/${window.USDTZ_ADDRESS}#code`;
+  </script>
+</body>
+</html>
