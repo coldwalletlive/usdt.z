@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>USDT.Z — Official Token Info</title>
   <meta name="description" content="USDT.Z (USDTZ) official info page. Transparent token details and audit links. Not affiliated with Tether/USDT." />
-  <link rel="icon" type="image/png" href="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png">
+  <link rel="icon" type="image/png" href="images/logo.png">
   <style>
-    /* Colors extracted from USDT.Z logo */
     :root{
-      --bg: #0a0f1a;        /* Dark background */
-      --mut: #111827;       /* Dark cards */
-      --card: #1a2438;      /* Card background */
-      --bor: #2d3748;       /* Borders */
-      --txt: #f7fafc;       /* White text */
-      --sub: #a0aec0;       /* Subtext */
-      --a: #3182ce;         /* Blue from logo */
-      --accent: #d69e2e;    /* Gold from logo */
-      --ok: #38a169;        /* Green for success */
+      --bg: #0a0f1a;
+      --mut: #111827;
+      --card: #1a2438;
+      --bor: #2d3748;
+      --txt: #f7fafc;
+      --sub: #a0aec0;
+      --a: #3182ce;
+      --accent: #d69e2e;
+      --ok: #38a169;
     }
     *{box-sizing:border-box} 
     body{
@@ -87,6 +86,7 @@
       color:var(--txt);
       font-family:ui-monospace,Consolas,monospace;
       font-size: 14px;
+      cursor: text;
     }
     .list{display:grid;gap:8px} 
     .li{
@@ -135,6 +135,7 @@
       width: 40px;
       height: 40px;
       border-radius: 10px;
+      object-fit: cover;
     }
     .logo-text {
       font-weight: bold;
@@ -151,6 +152,7 @@
       margin-bottom: 20px;
       border: 2px solid var(--accent);
       box-shadow: 0 4px 12px rgba(214, 158, 46, 0.3);
+      object-fit: cover;
     }
     .status-dot {
       display: inline-block;
@@ -167,15 +169,39 @@
       padding: 24px;
       margin: 20px 0;
     }
+    .fallback-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      background: linear-gradient(45deg, var(--a), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0 auto 20px;
+      border: 2px solid var(--accent);
+    }
+    .contract-display {
+      background: var(--mut);
+      border: 1px solid var(--bor);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 14px;
+      word-break: break-all;
+      color: var(--accent);
+    }
   </style>
-  <script src="config.js"></script>
 </head>
 <body>
   <div class="nav">
     <div class="wrap">
       <div class="row">
         <div class="logo-container">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png" alt="USDT.Z Logo" class="logo-img">
+          <div class="fallback-logo" style="width: 40px; height: 40px; font-size: 12px;">USDT.Z</div>
           <div class="logo-text">USDT.Z</div>
         </div>
         <div class="row">
@@ -194,19 +220,29 @@
     <div class="grid grid-2">
       <div class="card">
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png" alt="USDT.Z Logo" class="hero-logo">
+          <div class="fallback-logo">USDT.Z</div>
         </div>
         <p class="muted">Transparent BEP-20 token on Binance Smart Chain. <b>Not affiliated with Tether/USDT</b>.</p>
         <h1 class="h1">USDT.Z Token</h1>
+        
         <div class="h2">Smart Contract Address</div>
-        <div style="display:flex;gap:8px;margin:8px 0 12px">
-          <input id="addr" class="addr" readonly>
+        
+        <!-- الطريقة 1: عرض العنوان مباشرة -->
+        <div class="contract-display" id="contractDisplay">
+          0xee9aa8b56cbc6074558eb7b8860242264590a095
+        </div>
+        
+        <!-- الطريقة 2: حقل الإدخال (اختياري) -->
+        <div style="display:flex;gap:8px;margin:8px 0 12px; display: none;">
+          <input id="addr" class="addr" readonly value="0xee9aa8b56cbc6074558eb7b8860242264590a095">
           <button class="btn" id="copyBtn" style="white-space: nowrap;">Copy</button>
         </div>
-        <div class="row" style="flex-wrap:wrap;justify-content:flex-start; gap: 8px;">
-          <a class="btn" id="bscBtn" target="_blank" rel="noopener">View on BscScan</a>
+        
+        <div class="row" style="flex-wrap:wrap;justify-content:flex-start; gap: 8px; margin-top: 20px;">
+          <a class="btn" href="https://bscscan.com/token/0xee9aa8b56cbc6074558eb7b8860242264590a095" target="_blank" rel="noopener">View on BscScan</a>
           <a class="btn" href="source.html">Source Code</a>
           <a class="btn" href="audit.html">Audit Report</a>
+          <button class="btn" id="copyAddressBtn">Copy Address</button>
         </div>
 
         <div style="height:12px"></div>
@@ -280,7 +316,7 @@
   <section id="contact" class="wrap">
     <div class="card">
       <h2 class="h2">Contact & Legal</h2>
-      <p><strong>Email:</strong> <a id="em2" href="#">contact@usdtz.app</a></p>
+      <p><strong>Email:</strong> <a href="mailto:contact@usdtz.app">contact@usdtz.app</a></p>
       <p><strong>Privacy:</strong> <a href="privacy.html">Privacy Policy</a></p>
       <p><strong>Legal:</strong> <a href="legal.html">Full Legal Disclaimer</a></p>
     </div>
@@ -296,28 +332,70 @@
   </section>
 
   <footer>
-    © <span id="y"></span> USDT.Z — Independent BEP-20 Token. Not affiliated with Tether.
+    © <span id="currentYear"></span> USDT.Z — Independent BEP-20 Token. Not affiliated with Tether.
   </footer>
 
   <script>
-    const y=document.getElementById('y');y.textContent=new Date().getFullYear();
-    const a=window.USDTZ_ADDRESS;
-    const e=window.CONTACT_EMAIL;
-    document.getElementById('addr').value=a;
-    const em2=document.getElementById('em2');
-    em2.textContent=e;
-    em2.href="mailto:"+e;
-    document.getElementById('bscBtn').href=`https://bscscan.com/token/${a}`;
-    document.getElementById('copyBtn').onclick=async()=>{
-      await navigator.clipboard.writeText(a);
-      const btn = document.getElementById('copyBtn');
-      btn.textContent = 'Copied!';
-      btn.style.background = 'var(--ok)';
-      setTimeout(() => { 
-        btn.textContent = 'Copy'; 
-        btn.style.background = 'var(--mut)';
-      }, 2000);
+    // تعيين السنة الحالية
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // وظيفة نسخ العنوان
+    document.getElementById('copyAddressBtn').onclick = async function() {
+      const contractAddress = "0xee9aa8b56cbc6074558eb7b8860242264590a095";
+      try {
+        await navigator.clipboard.writeText(contractAddress);
+        const btn = document.getElementById('copyAddressBtn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = 'var(--ok)';
+        setTimeout(() => { 
+          btn.textContent = originalText; 
+          btn.style.background = 'var(--mut)';
+        }, 2000);
+      } catch (err) {
+        // طريقة بديلة إذا فشل Clipboard API
+        const textArea = document.createElement('textarea');
+        textArea.value = contractAddress;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const btn = document.getElementById('copyAddressBtn');
+        const originalText = btn.textContent;
+        btn.textContent = 'Copied!';
+        btn.style.background = 'var(--ok)';
+        setTimeout(() => { 
+          btn.textContent = originalText; 
+          btn.style.background = 'var(--mut)';
+        }, 2000);
+      }
     };
+
+    // محاولة تحميل الشعار من CoinMarketCap إذا كان موجوداً
+    function tryLoadLogo() {
+      const logoUrl = 'https://s2.coinmarketcap.com/static/img/coins/200x200/38134.png';
+      const img = new Image();
+      img.onload = function() {
+        // استبدال الشعار الافتراضي بالصورة الحقيقية
+        const fallbacks = document.querySelectorAll('.fallback-logo');
+        fallbacks.forEach(fallback => {
+          const realImg = document.createElement('img');
+          realImg.src = logoUrl;
+          realImg.alt = 'USDT.Z Logo';
+          realImg.style.width = '100%';
+          realImg.style.height = '100%';
+          realImg.style.borderRadius = getComputedStyle(fallback).borderRadius;
+          fallback.innerHTML = '';
+          fallback.appendChild(realImg);
+        });
+      };
+      img.src = logoUrl;
+    }
+
+    // محاولة تحميل الشعار عند بدء الصفحة
+    window.addEventListener('load', tryLoadLogo);
   </script>
 </body>
 </html>
+
